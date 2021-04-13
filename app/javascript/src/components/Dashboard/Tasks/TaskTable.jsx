@@ -1,11 +1,13 @@
 import React from "react";
 import { Checkbox, Badge, Button } from "neetoui";
 import Moment from 'moment';
+import DeleteTaskButton from "./DeleteTaskButton";
 
 export default function TaskTable({
   selectedTaskIds,
   setSelectedTaskIds,
   tasks = [],
+  fetchTask
 }) {
 
   const setBadgeColor = (state) => {
@@ -98,10 +100,7 @@ export default function TaskTable({
                     icon="ri-pencil-line"
                     className="mr-3"
                   />
-                <Button 
-                    style="icon" 
-                    icon="ri-delete-bin-line"
-                  />
+                <DeleteTaskButton taskId={task.id} fetchTasks={fetchTask}/>
               </td>
             </tr>
           ))}

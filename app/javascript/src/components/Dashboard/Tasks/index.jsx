@@ -108,6 +108,7 @@ const Tasks = () => {
                 selectedTaskIds={selectedTaskIds}
                 setSelectedTaskIds={setSelectedTaskIds}
                 tasks={tasks}
+                fetchTask={fetchTasks}
               />
             </div>
           </div>

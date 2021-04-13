@@ -24,7 +24,7 @@ class Api::V1::TasksController < Api::V1::BaseController
     else
       tasks_count = tasks.size
       tasks.destroy_all
-      render json: { notice: "#{tasks_count} tasks has been added deleted." }
+      render json: { notice: "Task successfully deleted" }
     end
   end
 
