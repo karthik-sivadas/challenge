@@ -1,0 +1,27 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+  password:
+
+development:
+  <<: *default
+  database: challenge_development
+
+test:
+  <<: *default
+  database: challenge_test
+
+heroku:
+  <<: *default
+  database: challenge_heroku
+
+staging:
+  <<: *default
+  database: challenge_staging
+
+production:
+  <<: *default
+  database: challenge_production
+  url: <%= ENV['DATABASE_URL'] %>
